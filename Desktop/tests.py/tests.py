@@ -1,25 +1,49 @@
 import unittest
-from primes import is_prime
 
-class PrimesTestCase(unittest.TestCase):
-    """Tests for `primes.py`."""
-    def test_is_not_int():
-    	assert int(is_prime())
-    def test_is_zero_prime():
-        assert not is_prime(0)
+from prime_nos import test_primenos
 
-    def test_is_one_prime():
-        assert not is_prime(1)
 
-    def test_is_five_prime(self):
-        """Is five successfully determined to be prime?"""
-        self.assertTrue(is_prime(5))
 
-    def test_negative_number(self):
-    """Is a negative number correctly determined not to be prime?"""
-    for index in range(:0):
-        self.assertFalse(is_prime(index))
+class Prime_numbers_TestCase(unittest.TestCase):
+	
+	"""Tests for prime numbers generator function"""
+	def test_case_integers(self):
+		self.assertEqual(prime_nos.primenumbers(""), 'Please ensure that you pass an integer')
+
+	def test_case_primeNumbers(self):
+		self.assertEqual(prime_nos.primenumbers(100), [[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]])
+
+
+	def test_case_Errors(self):
+		self.assertEqual(prime_nos.primenumbers(0) )
+
+	def test_case_primeNumbers(self):
+		self.assertEqual(prime_nos.primenumbers(10), [2, 3, 5, 7])
+		
+	def test_case_primeNumbers(self):
+		self.assertEqual(prime_nos.primenumbers(2), [1])
+
+	def test_case_primeList_Return(self):
+		self.assertIsInstance(prime_nos.primenumbers(7), list)
+
+	
+	def test_case_primeNumbers(self):
+		self.assertEqual(prime_nos.primenumbers(2), [2, 3, 5, 7, 11, 13, 17, 19])
+
+
+	def test_case_string(self):
+		self.assertEqual(prime_nos.primenumbers('2'), 'Please ensure that you pass an integer')
+
+	def test_case_Negatives(self):
+		self.assertEqual(prime_nos.primenumbers(-6), [])
+
+
+	def test_case_list(self):
+		self.assertEqual(prime_nos.primenumbers([3, 4, 60]), 'Please ensure that you pass an integer')
+		
+
+	
 
 
 if __name__ == '__main__':
-    unittest.main()
+	unittest.main()
